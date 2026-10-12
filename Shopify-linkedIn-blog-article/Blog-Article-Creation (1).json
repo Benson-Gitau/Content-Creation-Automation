@@ -1,0 +1,1665 @@
+{
+  "name": "Blog Article Creation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                4
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "1d083c69-740f-44fc-a02a-fd1c4a97b402",
+      "name": "Every Thursday 9am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        64,
+        432
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "ebc87cc5-c78d-4eaf-9e32-d8683718fefd",
+      "name": "Run manually (test)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        48,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c7cbef07-ce17-49c5-af6c-7c85a3c5f64e",
+              "name": "shop",
+              "value": "example-store",
+              "type": "string"
+            },
+            {
+              "id": "bf53a03d-7576-4bfb-afcb-9d1c6e021113",
+              "name": "shopifyApiVersion",
+              "value": "2026-07",
+              "type": "string"
+            },
+            {
+              "id": "6ef18350-d273-4873-a2aa-f9bc60669b72",
+              "name": "blogHandle",
+              "value": "articles",
+              "type": "string"
+            },
+            {
+              "id": "a4a214ba-fc9e-4799-a330-a7c4c5d1d70d",
+              "name": "authorName",
+              "value": "ABC Company",
+              "type": "string"
+            },
+            {
+              "id": "35c7ab69-8797-4bf0-ad40-c18c4d0d59b2",
+              "name": "storeUrl",
+              "value": "https://www.example.com",
+              "type": "string"
+            },
+            {
+              "id": "6afa1f4c-ebd5-45c6-a631-9f84f722a1ad",
+              "name": "notifyEmail",
+              "value": "editor@example.com",
+              "type": "string"
+            },
+            {
+              "id": "a765ffd7-68dd-4941-a727-dc8754d432c1",
+              "name": "sheetId",
+              "value": "1AbCdEfGhIjKlMnOpQrStUvWxYz0123456789SampleId",
+              "type": "string"
+            },
+            {
+              "id": "0ae9a009-094c-48a6-a75f-c7cdea115407",
+              "name": "sheetTab",
+              "value": "Blog Queue",
+              "type": "string"
+            },
+            {
+              "id": "0ff00744-dcc1-4603-a9cd-4a2572ae6506",
+              "name": "researchModel",
+              "value": "anthropic/claude-sonnet-5-5",
+              "type": "string"
+            },
+            {
+              "id": "5a387ec5-17c7-48d3-a3a5-d84a058e86ca",
+              "name": "writerModel",
+              "value": "anthropic/claude-opus-5-5",
+              "type": "string"
+            },
+            {
+              "id": "a0083bb7-6e66-4eeb-afbd-5360415e01e0",
+              "name": "maxSearches",
+              "value": 10,
+              "type": "number"
+            },
+            {
+              "id": "84805225-43eb-45fa-ac60-2c8da3f91886",
+              "name": "wordCount",
+              "value": 1500,
+              "type": "number"
+            },
+            {
+              "id": "c537aa15-e5d1-4b7f-a221-05b9e7b3ec09",
+              "name": "maxTokens",
+              "value": 16000,
+              "type": "number"
+            },
+            {
+              "id": "3bb3a75b-6331-4695-a6e8-57f9795351a3",
+              "name": "imageModel",
+              "value": "openai/gpt-image-2.5-sunburst",
+              "type": "string"
+            },
+            {
+              "id": "93a71bf3-6207-4127-a9ef-761b1c8428e9",
+              "name": "imageQuality",
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "id": "9d2f196d-5b0c-4aec-ae7c-7177bf5d4bd4",
+              "name": "imageSize",
+              "value": "1920x1080",
+              "type": "string"
+            },
+            {
+              "id": "2609de0e-97f5-413a-a715-b3cbb6a3f03b",
+              "name": "brandFacts",
+              "value": "- ABC Company is a leading provider of innovative solutions in the technology industry.\n- Our company has been at the forefront of technological advancement since its inception in 2005.\n- Family story (tell it as a family story, not as documented history): when the company began, it was just a small startup with a vision to revolutionize the way people interact with technology. The founder was given the opportunity to turn this vision into reality.\n- The company sits at the intersection of creativity and technology, fostering an environment where innovation thrives.\n- Varieties: cutting-edge software solutions and hardware products. 100% customer-focused.\n- The products are developed by a team of dedicated professionals.\n- ABC Company LLC is based in San Francisco, California. We develop and ship our products globally.\n- Three product lines of the same category: basic, standard and premium. Each line offers unique features and benefits. 12 oz packages, also sold as 2-packs and 3-packs.\n- Standard and premium lines also come as compatible accessories.\n- Basic line tastes of simplicity and reliability, with a user-friendly interface and robust performance.\n- Standard line tastes of enhanced functionality and improved aesthetics, with a smooth user experience and a modern design.\n- Premium line tastes of luxury and exclusivity, with a high-end build quality and advanced features.\n- Shipping: free on every subscription order and on one-time orders over $55. We sell to customers in the United States.\n- Subscriptions: delivery weekly, every two weeks or monthly. Subscribers get free shipping (there is no percentage discount). Pause, skip or cancel anytime.\n- Caffeine: our products have not been lab-tested. It is in the normal range for 100% customer-focused products.\n- Never say about ABC Company: prices, review scores, \"organic\" or any certification, awards, \"lab-tested\", \"roasted to order\", \"AA\", cooperatives or partner companies.",
+              "type": "string"
+            },
+            {
+              "id": "268c810c-a31b-4b78-aeb7-ef6e4371ed93",
+              "name": "linkTargets",
+              "value": "https://www.example.com/collections/all-coffee | All coffee (main shop page)\nhttps://www.example.com/products/light-roast-coffee-beans | Light roast\nhttps://www.example.com/products/medium-roast-coffee-beans | Medium roast\nhttps://www.example.com/products/dark-roast-coffee-beans | Dark roast\nhttps://www.example.com/collections/coffee-pods | Coffee pods (single-serve compatible)\nhttps://www.example.com/pages/coffee-subscriptions | Coffee subscriptions\nhttps://www.example.com/pages/coffee-grind-size-guide | Grind size chart\nhttps://www.example.com/pages/how-to-store-coffee-beans | How to store coffee beans\nhttps://www.example.com/pages/about-us | About our farm and our family",
+              "type": "string"
+            },
+            {
+              "id": "7cdf12c3-b5f9-4b3a-a531-d8ead3e3e3a7",
+              "name": "imageStyle",
+              "value": "Photorealistic editorial food photograph for a specialty coffee brand's blog. It must look like a real photograph taken by a professional, not an illustration or a 3D render.\n\nCamera: full-frame camera, 50mm lens (85mm for close-ups), aperture around f/2.8 to f/4, the main subject in sharp focus with a soft, natural background blur.\nLight: soft natural daylight from a window at one side, gentle shadows, no flash, no studio glare.\nColor: deep coffee browns, warm cream and beige (#EDE4D3), matte black, with small accents of brass or gold and ripe-cherry red. Natural, slightly warm white balance. Not oversaturated.\nSurfaces and props: dark walnut or aged wood tabletop, natural linen, handmade ceramic cups in cream or matte black, clear glass servers, brushed steel or brass tools. Everything plain and unbranded.\nComposition: one clear subject, uncluttered, generous empty space, rule of thirds.\nTexture: true to life. Crema on espresso, fine steam, an oily sheen on dark-roast beans, a dry matte surface on light-roast beans, visible grain in the wood.\nMood: calm, warm, unhurried morning. Crafted and premium, but homely.\n\nStrictly none of these: text, letters, numbers, logos, labels, watermarks, brand names, printed packaging, people's faces, extra or malformed fingers, cartoon or illustration style, 3D-render look, HDR, heavy vignette, lens flare, sparkles, clutter, words drawn in latte art.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "781a168f-a458-48dd-9191-2f940c02218b",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        336,
+        432
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Stops early with a clear message if the Config node still has placeholder values.\nconst c = $input.first().json;\nconst problems = [];\nif (!c.shop || c.shop === 'your-store' || /[.\\/]/.test(c.shop)) problems.push('shop: enter only the part before .myshopify.com');\nif (!/^https?:\\/\\/[^\\/]+\\.[a-z]{2,}/i.test(c.storeUrl || '')) problems.push('storeUrl: enter the public store address, starting with https://');\nif (!/^\\S+@\\S+\\.\\S+$/.test(c.notifyEmail || '') || c.notifyEmail === 'you@example.com') problems.push('notifyEmail: enter the address that should get the review email');\nif (!c.sheetId || /\\s|\\//.test(c.sheetId)) problems.push('sheetId: enter the Google Sheet ID (the long code in the sheet address, between /d/ and /edit)');\nif (!c.sheetTab) problems.push('sheetTab: enter the name of the tab that holds the queue');\nif (!c.blogHandle) problems.push('blogHandle: enter the handle of the Shopify blog to post to');\nif (String(c.brandFacts || '').trim().length < 200) problems.push('brandFacts: this is the only thing the AI may say about the brand, so it cannot be empty');\nif (problems.length) throw new Error('Finish the Config node first. ' + problems.join(' | '));\nreturn $input.all();"
+      },
+      "id": "8e8213bf-59ba-4219-b83a-e33ab3474585",
+      "name": "Check Config",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        576,
+        432
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://sheets.googleapis.com/v4/spreadsheets/{{ $('Config').first().json.sheetId }}/values/{{ encodeURIComponent(\"'\" + $('Config').first().json.sheetTab.replace(/'/g, \"''\") + \"'!A1:Z1000\") }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {}
+      },
+      "id": "sheet Id",
+      "name": "Sheets: Read Queue",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        912,
+        432
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "QGLWvYHj",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Turns the sheet into rows and picks the next topic: status \"Queued\", lowest priority number first,\n// then top to bottom. Rows with any other status (Hold, Drafted, Published...) are skipped.\nconst res = $input.first().json ?? {};\nif (res.error) throw new Error('Could not read the Google Sheet. Check the Google credential, Config.sheetId and Config.sheetTab. Google said: ' + JSON.stringify(res.error).slice(0, 400));\nconst values = res.values ?? [];\nif (values.length < 2) throw new Error('The sheet tab is empty or has only a header row.');\n\nconst header = values[0].map(h => String(h ?? '').trim().toLowerCase());\nconst need = ['id', 'status', 'working_title', 'primary_keyword', 'brief'];\nconst missing = need.filter(n => !header.includes(n));\nif (missing.length) throw new Error('The sheet is missing these column headings: ' + missing.join(', ') + '. Row 1 must keep the original headings.');\n\nconst colLetter = (index) => { let n = index + 1, s = ''; while (n > 0) { const m = (n - 1) % 26; s = String.fromCharCode(65 + m) + s; n = Math.floor((n - 1) / 26); } return s; };\nconst columns = {};\nheader.forEach((h, i) => { if (h) columns[h] = colLetter(i); });\n\nconst rows = values.slice(1)\n  .map((r, i) => { const o = { rowNumber: i + 2 }; header.forEach((h, c) => { if (h) o[h] = String(r[c] ?? '').trim(); }); return o; })\n  .filter(r => r.id || r.working_title);\n\nconst queued = rows.filter(r => r.status.toLowerCase() === 'queued' && r.working_title);\nqueued.sort((a, b) => (Number(a.priority) || 99) - (Number(b.priority) || 99) || a.rowNumber - b.rowNumber);\n\nconst counts = {};\nfor (const r of rows) { const s = r.status || '(blank)'; counts[s] = (counts[s] || 0) + 1; }\n\nif (!queued.length) return [{ json: { found: false, counts, totalRows: rows.length } }];\n\nconst r = queued[0];\nconst list = (v) => String(v ?? '').split('|').map(s => s.trim()).filter(Boolean);\nconst yes = (v) => /^(yes|y|true|1)$/i.test(String(v ?? '').trim());\n\nconst topic = {\n  id: r.id,\n  rowNumber: r.rowNumber,\n  working_title: r.working_title,\n  primary_keyword: r.primary_keyword || r.working_title,\n  research_query: r.research_query || r.primary_keyword || r.working_title,\n  brief: r.brief,\n  supporting_searches: list(r.supporting_searches),\n  internal_links: list(r.internal_links).filter(u => /^https?:\\/\\//.test(u)),\n  names_other_brands: yes(r.names_other_brands),\n  health_sensitive: yes(r.health_sensitive),\n};\n\nreturn [{ json: { found: true, topic, columns, queuedLeft: queued.length - 1, nextUp: queued.slice(1, 4).map(q => q.working_title), counts } }];"
+      },
+      "id": "cba56549-34d6-4630-9af7-5b4872b0fe08",
+      "name": "Pick Next Topic",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1232,
+        432
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c407382d-e6b6-4dac-af1a-067f37a5f9ab",
+              "leftValue": "={{ $json.found }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "21275656-760c-4019-8795-b55be4f87d69",
+      "name": "Topic Found?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1456,
+        432
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Nothing left to write: tell the owner instead of failing silently.\nconst cfg = $('Config').first().json;\nconst j = $input.first().json;\nconst esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst counts = Object.entries(j.counts ?? {}).map(([k, v]) => '<li>' + esc(k) + ': ' + v + '</li>').join('');\nconst html = [\n  '<p>The weekly blog writer ran, but no row in the topic queue has the status <strong>Queued</strong>, so no post was written.</p>',\n  '<p><a href=\"https://docs.google.com/spreadsheets/d/' + esc(cfg.sheetId) + '/edit\">Open the queue</a> and add rows, or change a row from Hold to Queued.</p>',\n  counts ? '<p>Rows by status:</p><ul>' + counts + '</ul>' : '',\n].join('\\n');\nreturn [{ json: { to: cfg.notifyEmail, subject: 'Blog queue is empty: no post written this week', html } }];"
+      },
+      "id": "49aa5812-80d7-481a-abea-33753282f57e",
+      "name": "Build Queue-Empty Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1744,
+        624
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.to }}",
+        "subject": "={{ $json.subject }}",
+        "message": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "247ba723-59bf-4ac6-8f54-2be539788ea2",
+      "name": "Email: Queue Empty",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1984,
+        624
+      ],
+      "webhookId": "515fa805-cbfb-463d-be7b-3071dedb8b24",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Z3VpSMTgi9CJOWPR",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Config').first().json.shop }}.myshopify.com/admin/api/{{ $('Config').first().json.shopifyApiVersion }}/graphql.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ query: \"{ blogs(first: 50) { nodes { id handle title } } articles(first: 200, reverse: true) { nodes { title handle isPublished blog { handle } } } }\" }) }}",
+        "options": {}
+      },
+      "id": "920d61e1-9460-40d9-a0f6-7bff604dd74e",
+      "name": "Shopify: Blog & Existing Posts",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1728,
+        416
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "KMuuG8lYOyaVkNcn",
+          "name": "Shopify store"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "953d1d94-7fd1-4a1d-ab43-c984c58ecfd1",
+              "leftValue": "={{ $json.count > 0 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "e37dffae-4db6-474d-a47c-645ea16acc78",
+      "name": "Any Images?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1824,
+        896
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Config').first().json.shop }}.myshopify.com/admin/api/{{ $('Config').first().json.shopifyApiVersion }}/graphql.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.graphql) }}",
+        "options": {}
+      },
+      "id": "2c790781-4374-4d30-b703-6cfae6fa64c9",
+      "name": "Shopify: Get Upload Addresses",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2064,
+        880
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "KMuuG8lYOyaVkNcn",
+          "name": "Shopify store"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pairs each generated image with its Shopify upload address and turns it into a file.\n\n// Finds another node's items even when n8n has added a number to its name (for example \"Collect Images1\").\nconst itemsOf = (base) => {\n  for (const name of [base, base + '1', base + '2', base + '3', base + '4', base + '5']) {\n    try { const all = $(name).all(); if (all.length) return all; } catch (e) { /* not this one */ }\n  }\n  throw new Error('Could not find the output of \"' + base + '\". Check that the node exists and ran before this one.');\n};\nconst plan = itemsOf('Collect Images')[0].json;\nconst gen = itemsOf('AI: Generate Image');\nconst res = $input.first().json ?? {};\nconst sc = res.data?.stagedUploadsCreate;\nconst errs = res.errors ?? (sc?.userErrors?.length ? sc.userErrors : null);\nconst targets = sc?.stagedTargets ?? [];\nif (errs || targets.length !== plan.images.length || targets.some(x => !x?.url)) {\n  throw new Error('Shopify would not accept the image uploads. Check that the Shopify app has the write_files scope and was reinstalled after you added it. Shopify said: ' + JSON.stringify(errs ?? res).slice(0, 500));\n}\nconst out = [];\nfor (let i = 0; i < plan.images.length; i++) {\n  const im = plan.images[i];\n  const buf = Buffer.from(gen[im.index].json.data[0].b64_json, 'base64');\n  const binary = await this.helpers.prepareBinaryData(buf, im.filename, im.mime);\n  out.push({\n    json: {\n      slot: im.slot, alt: im.alt, filename: im.filename, bytes: buf.length,\n      uploadUrl: targets[i].url,\n      resourceUrl: targets[i].resourceUrl,\n      headers: Object.fromEntries((targets[i].parameters ?? []).map(p => [p.name, p.value])),\n    },\n    binary: { data: binary },\n  });\n}\nreturn out;"
+      },
+      "id": "063d2a42-e87a-4500-bb07-cdb83e8c0249",
+      "name": "Prepare Uploads",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2304,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "={{ $json.uploadUrl }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyOAuth2Api",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 120000
+        }
+      },
+      "id": "a1f51535-7d40-47c0-a527-2b4086026a2c",
+      "name": "Shopify: Upload Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2528,
+        880
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "KMuuG8lYOyaVkNcn",
+          "name": "Shopify store"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Works out which uploads succeeded and tells Shopify to add those images to Content > Files.\nconst ups = $('Prepare Uploads').all().map(i => i.json);\nconst results = $input.all();\nconst registered = [];\nconst uploadErrors = [];\nups.forEach((u, i) => {\n  const err = results[i]?.json?.error;\n  if (err || !results[i]) uploadErrors.push({ slot: u.slot, reason: 'upload to Shopify failed (' + String(err?.description ?? err?.message ?? err ?? 'no response').slice(0, 200) + ')' });\n  else registered.push({ slot: u.slot, alt: u.alt, resourceUrl: u.resourceUrl });\n});\nreturn [{ json: {\n  count: registered.length,\n  registered: registered.map(r => ({ slot: r.slot, alt: r.alt })),\n  uploadErrors,\n  graphql: {\n    query: 'mutation Files($files: [FileCreateInput!]!) { fileCreate(files: $files) { files { id fileStatus alt } userErrors { field message code } } }',\n    variables: { files: registered.map(r => ({ originalSource: r.resourceUrl, contentType: 'IMAGE', alt: r.alt })) },\n  },\n} }];"
+      },
+      "id": "9b0b74e5-9d62-43c2-99b6-138b020af74e",
+      "name": "Build File Records",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2736,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0361d8b8-2b12-4af7-ac1a-b4a543605ab5",
+              "leftValue": "={{ $json.count > 0 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "899a57b1-ceea-40e0-9f50-b413e92cdab0",
+      "name": "Any Uploaded?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2992,
+        912
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Config').first().json.shop }}.myshopify.com/admin/api/{{ $('Config').first().json.shopifyApiVersion }}/graphql.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.graphql) }}",
+        "options": {}
+      },
+      "id": "52262c22-ff30-493e-9736-07b859720b5d",
+      "name": "Shopify: Register Files",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        64,
+        1456
+      ],
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "KMuuG8lYOyaVkNcn",
+          "name": "Shopify store"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Confirms Shopify registered the files and builds the \"are they ready yet?\" question.\nconst reg = $('Build File Records').first().json.registered;\nconst res = $input.first().json ?? {};\nconst fc = res.data?.fileCreate;\nconst files = fc?.files ?? [];\nif (res.errors || fc?.userErrors?.length || files.length !== reg.length) {\n  throw new Error('Shopify did not register the images. Shopify said: ' + JSON.stringify(res.errors ?? fc?.userErrors ?? res).slice(0, 500));\n}\nreturn [{ json: {\n  slots: reg.map((r, i) => ({ slot: r.slot, alt: r.alt, fileId: files[i].id })),\n  graphql: {\n    query: 'query Ready($ids: [ID!]!) { nodes(ids: $ids) { ... on MediaImage { id fileStatus image { url width height } } } }',\n    variables: { ids: files.map(f => f.id) },\n  },\n} }];"
+      },
+      "id": "2e71c96f-7da8-4cf5-9d3f-1bd9ee743d1d",
+      "name": "Check Registered Files",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        512,
+        1456
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "5d1a4c50-19d2-41b0-a78b-0e8fa78c67e7",
+      "name": "Wait for Shopify",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        1456
+      ],
+      "webhookId": "d6086141-0be0-4701-a918-0fb8e509db2b"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Config').first().json.shop }}.myshopify.com/admin/api/{{ $('Config').first().json.shopifyApiVersion }}/graphql.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Check Registered Files').first().json.graphql) }}",
+        "options": {}
+      },
+      "id": "530265dc-643d-420f-b712-fa5df88ceba0",
+      "name": "Shopify: Image Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        1456
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "KMuuG8lYOyaVkNcn",
+          "name": "Shopify store"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "79961161-000a-4150-aec3-b0917b2c6238",
+              "leftValue": "={{ ($json.data?.nodes ?? []).length > 0 && $json.data.nodes.every(n => n && ['READY', 'FAILED'].includes(n.fileStatus)) || $runIndex >= 11 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "93aa54e5-f64a-4da6-881e-25a9bbc18304",
+      "name": "Images Ready?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1440,
+        1456
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Puts the images into the post and builds the Shopify \"create hidden draft\" call.\n// Runs with or without images: if image generation failed, the post is still saved.\n\n// Finds another node's output even when n8n has added a number to its name (for example \"Parse Article1\"),\n// which happens when a node is pasted while an older copy is still on the canvas.\nconst itemsOf = (base) => {\n  for (const name of [base, base + '1', base + '2', base + '3', base + '4', base + '5']) {\n    try { const all = $(name).all(); if (all.length) return all; } catch (e) { /* not this one */ }\n  }\n  return [];\n};\nconst maybe = (base) => itemsOf(base)[0]?.json ?? null;\nconst need = (base) => {\n  const j = maybe(base);\n  if (!j) throw new Error('Could not find the output of \"' + base + '\". Check that the node exists, ran before this one, and is named \"' + base + '\" (a number on the end is fine).');\n  return j;\n};\nconst inp = $input.first().json ?? {};\nconst cfg = need('Config');\nconst art = need('Parse Article');\nconst plan = need('Collect Images');\nconst blogId = (maybe('Check Shopify Setup') ?? maybe('Build Research Request'))?.blogId;\nif (!blogId) throw new Error('Could not find which Shopify blog to post to. \"Check Shopify Setup\" should run near the start and output a blogId.');\n\n// --- Which images made it all the way into Shopify Files\nconst placed = {};\nconst imageNotes = plan.failed.map(f => f.slot + ': not generated (' + f.reason + ')');\nfor (const e of maybe('Build File Records')?.uploadErrors ?? []) imageNotes.push(e.slot + ': ' + e.reason);\nif (Array.isArray(inp.data?.nodes)) {\n  const slots = need('Check Registered Files').slots;\n  inp.data.nodes.forEach((n, i) => {\n    const s = slots[i];\n    if (!s) return;\n    if (n?.fileStatus === 'READY' && n.image?.url) placed[s.slot] = { url: n.image.url, alt: s.alt, width: n.image.width, height: n.image.height };\n    else if (n?.fileStatus === 'FAILED') imageNotes.push(s.slot + ': Shopify could not process the file');\n    else imageNotes.push(s.slot + ': Shopify was still processing it after a minute. It should appear in Content > Files shortly; add it to the post by hand');\n  });\n}\n\n// --- Swap the [[IMAGE_n]] markers for the images\nconst sized = (url) => url + (url.includes('?') ? '&' : '?') + 'width=1200';\nconst figure = (im) => '<figure style=\"margin:24px 0;\"><img src=\"' + sized(im.url) + '\" alt=\"' + String(im.alt).replace(/\"/g, '&quot;') + '\"' +\n  (im.width && im.height ? ' width=\"' + im.width + '\" height=\"' + im.height + '\"' : '') +\n  ' loading=\"lazy\" style=\"width:100%;height:auto;display:block;border-radius:6px;\"></figure>';\n\nlet body = art.body;\nconst insertBeforeNthH2 = (html, n, block) => {\n  let seen = 0, done = false;\n  const out = html.replace(/<h2\\b/gi, (m) => { seen++; if (seen === n && !done) { done = true; return block + m; } return m; });\n  return done ? out : html + block;\n};\nconst h2Count = (body.match(/<h2\\b/gi) || []).length;\n[['inline_1', 1, 2], ['inline_2', 2, Math.max(3, Math.ceil(h2Count * 0.6))]].forEach(([slot, n, fallbackH2]) => {\n  const marker = new RegExp('(<p>\\\\s*)?\\\\[\\\\[IMAGE_' + n + '\\\\]\\\\](\\\\s*</p>)?', 'i');\n  const block = placed[slot] ? figure(placed[slot]) : '';\n  if (marker.test(body)) body = body.replace(marker, block);\n  else if (block) body = insertBeforeNthH2(body, fallbackH2, block);\n});\nbody = body.replace(/(<p>\\s*)?\\[\\[IMAGE_\\d\\]\\](\\s*<\\/p>)?/gi, '');\n\nconst article = {\n  blogId,\n  title: art.title,\n  author: { name: cfg.authorName },\n  handle: art.handle,\n  body,\n  summary: art.summary,\n  tags: art.tags,\n  isPublished: false, // saved hidden; a person publishes it in Shopify\n};\nif (placed.featured) article.image = { url: placed.featured.url, altText: placed.featured.alt };\n\nreturn [{ json: {\n  graphql: {\n    query: 'mutation CreateArticle($article: ArticleCreateInput!) { articleCreate(article: $article) { article { id title handle isPublished } userErrors { code field message } } }',\n    variables: { article },\n  },\n  placed,\n  imageNotes,\n} }];"
+      },
+      "id": "5faadf00-2b00-4cfe-a220-673561be88a9",
+      "name": "Assemble Draft",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1680,
+        1456
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Config').first().json.shop }}.myshopify.com/admin/api/{{ $('Config').first().json.shopifyApiVersion }}/graphql.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.graphql) }}",
+        "options": {}
+      },
+      "id": "ca3f0052-55cc-44c3-9528-58b0b035482e",
+      "name": "Shopify: Create Draft Post",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1920,
+        1456
+      ],
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "KMuuG8lYOyaVkNcn",
+          "name": "Shopify store"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c48d98c0-f6f1-4ae7-a228-76ad55470b27",
+              "leftValue": "={{ !!$json.data?.articleCreate?.article?.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "55cca34b-a0f5-495e-8176-4980ab5ebda6",
+      "name": "Draft Created?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2160,
+        1456
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "={{ 'Shopify did not create the draft: ' + JSON.stringify($json.data?.articleCreate?.userErrors?.length ? $json.data.articleCreate.userErrors : ($json.errors ?? $json)) }}"
+      },
+      "id": "3310f787-6ea4-465b-8413-041829cd3a56",
+      "name": "Stop: Shopify Rejected Post",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        2400,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// The draft exists. Build two follow-up calls: SEO title/description on the post, and the\n// queue row update in the Google Sheet (status, link, date).\n\n// Finds another node's output even when n8n has added a number to its name (for example \"Parse Article1\"),\n// which happens when a node is pasted while an older copy is still on the canvas.\nconst itemsOf = (base) => {\n  for (const name of [base, base + '1', base + '2', base + '3', base + '4', base + '5']) {\n    try { const all = $(name).all(); if (all.length) return all; } catch (e) { /* not this one */ }\n  }\n  return [];\n};\nconst maybe = (base) => itemsOf(base)[0]?.json ?? null;\nconst need = (base) => {\n  const j = maybe(base);\n  if (!j) throw new Error('Could not find the output of \"' + base + '\". Check that the node exists, ran before this one, and is named \"' + base + '\" (a number on the end is fine).');\n  return j;\n};\nconst cfg = need('Config');\nconst pick = need('Pick Next Topic');\nconst art = need('Parse Article');\nconst created = $input.first().json.data.articleCreate.article;\n\nconst numericId = String(created.id).split('/').pop();\nconst adminUrl = 'https://admin.shopify.com/store/' + cfg.shop + '/content/articles/' + numericId;\n\nconst seo = {\n  query: 'mutation Seo($metafields: [MetafieldsSetInput!]!) { metafieldsSet(metafields: $metafields) { metafields { key } userErrors { field message code } } }',\n  variables: { metafields: [\n    { ownerId: created.id, namespace: 'global', key: 'title_tag', type: 'single_line_text_field', value: art.seoTitle },\n    { ownerId: created.id, namespace: 'global', key: 'description_tag', type: 'single_line_text_field', value: art.metaDescription },\n  ] },\n};\n\nconst tab = \"'\" + String(cfg.sheetTab).replace(/'/g, \"''\") + \"'!\";\nconst row = pick.topic.rowNumber;\nconst data = [];\nconst put = (col, value) => { if (pick.columns[col]) data.push({ range: tab + pick.columns[col] + row, values: [[value]] }); };\nput('status', 'Drafted');\nput('draft_link', adminUrl);\nput('date_drafted', $now.toFormat('yyyy-MM-dd'));\n\nreturn [{ json: { articleId: created.id, adminUrl, seo, sheet: { valueInputOption: 'USER_ENTERED', data } } }];"
+      },
+      "id": "4101b9c8-5e34-40fd-8a6b-f7ad5d95a82c",
+      "name": "Build Follow-ups",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2400,
+        1456
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Config').first().json.shop }}.myshopify.com/admin/api/{{ $('Config').first().json.shopifyApiVersion }}/graphql.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "shopifyOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Build Follow-ups').first().json.seo) }}",
+        "options": {}
+      },
+      "id": "ba9012ed-5e71-4f29-82cf-572f8bb039a5",
+      "name": "Shopify: Set SEO Title & Description",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2640,
+        1456
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "shopifyOAuth2Api": {
+          "id": "KMuuG8lYOyaVkNcn",
+          "name": "Shopify store"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://sheets.googleapis.com/v4/spreadsheets/{{ $('Config').first().json.sheetId }}/values:batchUpdate",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Build Follow-ups').first().json.sheet) }}",
+        "options": {}
+      },
+      "id": "2fb2e2e7-d918-44f8-bbe3-a5ec72cdb004",
+      "name": "Sheets: Mark Row Drafted",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2880,
+        1456
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "QysYloCEzGLWvYHj",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Builds the review email: the blog draft, and what happened with the LinkedIn post if those steps are installed.\n// It can sit straight after the sheet update or after the LinkedIn steps; it finds what it needs by node name.\n// Swap the Gmail node after this for Slack, Telegram etc. if you prefer.\n\n// Finds another node's output even when n8n has added a number to its name (for example \"Parse Article1\"),\n// which happens when a node is pasted while an older copy is still on the canvas.\nconst itemsOf = (base) => {\n  for (const name of [base, base + '1', base + '2', base + '3', base + '4', base + '5']) {\n    try { const all = $(name).all(); if (all.length) return all; } catch (e) { /* not this one */ }\n  }\n  return [];\n};\nconst maybe = (base) => itemsOf(base)[0]?.json ?? null;\nconst need = (base) => {\n  const j = maybe(base);\n  if (!j) throw new Error('Could not find the output of \"' + base + '\". Check that the node exists, ran before this one, and is named \"' + base + '\" (a number on the end is fine).');\n  return j;\n};\nconst cfg = need('Config');\nconst pick = need('Pick Next Topic');\nconst t = pick.topic;\nconst wr = maybe('Build Writing Request') ?? {};\nconst art = need('Parse Article');\nconst draft = need('Assemble Draft');\nconst prompts = itemsOf('Build Image Prompts').map(i => i.json);\nconst after = need('Build Follow-ups');\nconst seoRes = maybe('Shopify: Set SEO Title & Description') ?? {};\nconst sheetRes = maybe('Sheets: Mark Row Drafted') ?? $input.first().json ?? {};\n\nconst esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\nconst list = (items, empty) => items.length ? '<ul>' + items.map(i => '<li>' + i + '</li>').join('') + '</ul>' : '<p>' + empty + '</p>';\n\nconst seoOk = !seoRes.error && !seoRes.errors && !(seoRes.data?.metafieldsSet?.userErrors ?? []).length && !!seoRes.data?.metafieldsSet;\nconst sheetOk = !sheetRes.error && Number(sheetRes.totalUpdatedCells ?? 0) > 0;\n\nconst slotName = { featured: 'Featured image', inline_1: 'In-body image 1', inline_2: 'In-body image 2' };\nconst imagesHtml = prompts.map(p => {\n  const im = draft.placed[p.slot];\n  return '<tr><td style=\"vertical-align:top;padding:6px;width:210px;\">' +\n    (im ? '<img src=\"' + esc(im.url) + (im.url.includes('?') ? '&amp;' : '?') + 'width=400\" width=\"200\" alt=\"\" style=\"display:block;border-radius:4px;\">' : '<em>not in the post</em>') +\n    '</td><td style=\"vertical-align:top;padding:6px;\"><strong>' + slotName[p.slot] + '</strong><br>Alt text: ' + esc(p.alt) + '<br><small>Scene asked for: ' + esc(p.scene) + '</small></td></tr>';\n}).join('');\n\n// --- LinkedIn: what was posted, or why nothing was. Left out entirely if the LinkedIn steps are not in the workflow.\nconst li = maybe('Build LinkedIn Post') ?? maybe('Build LinkedIn Email');\nconst liRes = maybe('LinkedIn: Publish Post') ?? maybe('LinkedIn') ?? maybe('Create a post');\nconst liErr = liRes?.error ? String(liRes.error.message ?? liRes.error.description ?? (typeof liRes.error === 'string' ? liRes.error : JSON.stringify(liRes.error))).slice(0, 400) : '';\nconst postBox = (text) => text ? '<div style=\"border:1px solid #d9cfbd;border-radius:6px;padding:12px 16px;margin:8px 0;white-space:pre-wrap;\">' + esc(text) + '</div>' : '';\nlet linkedinState = 'none';\nlet linkedinHtml = '';\nif (li && typeof li.post === 'boolean') {\n  const shown = (li.notes ?? []).filter(n => !(li.post && /^The blog post was not live yet/.test(n)));\n  const liNotes = shown.length ? list(shown.map(esc), '') : '';\n  if (!li.post) {\n    linkedinState = 'skipped';\n    linkedinHtml = '<p style=\"color:#b00020\"><strong>Nothing was posted to LinkedIn.</strong> ' + esc(li.reason) + '</p>' + liNotes +\n      (li.text ? '<p>The text it prepared, if you want to fix it and post it by hand:</p>' + postBox(li.text) : '');\n  } else if (liRes && !liErr && liRes.urn) {\n    linkedinState = 'posted';\n    linkedinHtml = '<p><strong>Posted to LinkedIn</strong> (' + li.characters + ' characters, ' + (li.mediaCategory === 'IMAGE' ? 'with the featured image' : 'text only') + '). ' +\n      '<a href=\"https://www.linkedin.com/feed/update/' + esc(liRes.urn) + '/\">Open the post</a></p>' +\n      (li.blogLive ? '' : '<p style=\"color:#b00020\"><strong>Publish the blog post soon.</strong> It was still hidden, so the LinkedIn post links to the blog front page, where readers will look for it.</p>') +\n      liNotes + postBox(li.text);\n  } else {\n    linkedinState = 'failed';\n    linkedinHtml = '<p style=\"color:#b00020\"><strong>The LinkedIn post was prepared but not published.</strong> ' +\n      (liErr ? 'LinkedIn said: ' + esc(liErr) : liRes ? 'LinkedIn did not confirm the post. Check your profile.' : 'The LinkedIn node did not run. Check that \"Post to LinkedIn?\" connects to it and that it connects to this node.') + '</p>' +\n      '<p>The text, to post by hand:</p>' + postBox(li.text);\n  }\n}\n\nconst html = [\n  '<p>A new blog draft is saved in Shopify as <strong>hidden</strong>. Nothing is live until you publish it.</p>',\n  '<p><a href=\"' + esc(after.adminUrl) + '\"><strong>Open the draft in Shopify</strong></a><br>',\n  '<small>If the link does not open, go to Shopify admin &rarr; Content &rarr; Blog posts.</small></p>',\n  '<table cellpadding=\"6\" style=\"border-collapse:collapse\">',\n  '<tr><td><strong>Title</strong></td><td>' + esc(art.title) + '</td></tr>',\n  '<tr><td><strong>Queue row</strong></td><td>' + esc(t.id) + ' (row ' + t.rowNumber + '), keyword: ' + esc(t.primary_keyword) + '</td></tr>',\n  '<tr><td><strong>Length</strong></td><td>' + art.words + ' words</td></tr>',\n  '<tr><td><strong>Tags</strong></td><td>' + esc(art.tags.join(', ')) + '</td></tr>',\n  '<tr><td><strong>Left in queue</strong></td><td>' + pick.queuedLeft + (pick.nextUp.length ? '. Next: ' + esc(pick.nextUp[0]) : '') + '</td></tr>',\n  '</table>',\n  sheetOk ? '' : '<p style=\"color:#b00020\"><strong>The Google Sheet was not updated.</strong> Set row ' + t.rowNumber + ' to \"Drafted\" by hand, or the same topic will be written again next week.</p>',\n\n  linkedinHtml ? '<h3>LinkedIn</h3>' : '',\n  linkedinHtml,\n\n  '<h3>Automatic checks</h3>',\n  list(art.checks.map(esc), 'Nothing flagged. Still read it through.'),\n\n  '<h3>Figures and claims to check before publishing</h3>',\n  art.claimsToVerify.length\n    ? '<ol>' + art.claimsToVerify.map(c => '<li>' + esc(c.claim) + (c.source_url ? ' <a href=\"' + esc(c.source_url) + '\">source</a>' : ' (no source given)') + '</li>').join('') + '</ol>'\n    : '<p>The writer listed no figures. Still read it through.</p>',\n\n  art.editorNotes ? '<h3>Notes from the writer</h3><p>' + esc(art.editorNotes) + '</p>' : '',\n\n  '<h3>Images</h3>',\n  '<p>These are AI-generated. Look for anything odd (hands, text, a logo) and swap in a real photo where you have one.</p>',\n  '<table style=\"border-collapse:collapse\">' + imagesHtml + '</table>',\n  draft.imageNotes.length ? list(draft.imageNotes.map(esc), '') : '',\n\n  '<h3>Search listing</h3>',\n  seoOk ? '<p>Set on the post automatically:</p>' : '<p style=\"color:#b00020\">Could not be set automatically. Paste these into \"Search engine listing\" on the post:</p>',\n  '<p><strong>Page title:</strong> ' + esc(art.seoTitle) + '<br><strong>Meta description:</strong> ' + esc(art.metaDescription) + '</p>',\n\n  '<h3>Pages the research read</h3>',\n  list((wr.researchSources ?? []).slice(0, 25).map(s => '<a href=\"' + esc(s.url) + '\">' + esc(s.title) + '</a>'), 'None recorded.'),\n].filter(Boolean).join('\\n');\n\nreturn [{ json: { to: cfg.notifyEmail, subject: 'Blog draft ready: ' + art.title, html, adminUrl: after.adminUrl, sheetOk, seoOk, linkedin: linkedinState } }];"
+      },
+      "id": "8b6e7b55-2324-43c2-a65f-0e375474e079",
+      "name": "Build Review Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1808,
+        1856
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.to }}",
+        "subject": "={{ $json.subject }}",
+        "message": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "b7a427d7-ef72-40f8-9790-7994f037014d",
+      "name": "Email: Draft Ready",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2080,
+        1856
+      ],
+      "webhookId": "19cfb370-c2c0-43f2-9e81-2a39f5a1b3ed",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Z3VpSMTgi9CJOWPR",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Weekly blog post from the topic queue\nTakes the next **Queued** row from the Google Sheet, researches it, writes the post, makes 3 images, saves everything in Shopify as a **hidden draft**, marks the row **Drafted** and emails you.\n\n### Setup (once)\n1. **Config**: set `shop` (the part before .myshopify.com) and `notifyEmail`. Check `blogHandle`.\n2. **Google Sheets OAuth2** credential on the 2 Sheets nodes.\n3. **SerpAPI** credential on \"Google Search: What People Ask\".\n4. **Anthropic** credential on the 2 AI nodes.\n5. **OpenAI** credential on \"OpenAI: Generate Image\".\n6. **Shopify**: the app needs scopes `read_content`, `write_content`, `write_files`, `read_files`. If you add scopes to an existing app, release a new version and approve it on the store. Custom Auth credential on \"Shopify: Get Access Token\":\n`{ \"body\": { \"client_id\": \"...\", \"client_secret\": \"...\" } }`\n7. **Gmail** credential on the 2 Email nodes.\n8. Click **Run manually (test)**, review the draft in Shopify, then Publish the workflow.",
+        "height": 630,
+        "width": 700,
+        "color": 4
+      },
+      "id": "d7fd70ea-101c-4311-b0b1-5e690ee31152",
+      "name": "Note: Setup",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -752,
+        16
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 1. Queue and research\nPicks the first row with status **Queued** (priority 1 first). Rows on **Hold** are skipped. Google shows what people ask; then the AI searches the web and reports facts with their sources. The writer may only use numbers found here.",
+        "height": 120,
+        "width": 1900,
+        "color": 5
+      },
+      "id": "d29972f4-cf76-4dd1-9f77-9506b0a2cf0a",
+      "name": "Note: Queue",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        16,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 2. Write the post, make the images\nVoice, structure and accuracy rules are in **Build Writing Request**. Brand facts and the photo style are in **Config**. If image generation fails, the post is still saved without images.",
+        "height": 120,
+        "width": 3000,
+        "color": 6
+      },
+      "id": "76a8aba0-e836-46f5-a217-d18f83ee9cc8",
+      "name": "Note: Write",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        48,
+        736
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 3. Save as hidden draft, update the sheet, email\nImages go to Shopify Files first. The post is saved with `isPublished: false`. The email lists every figure to check, automatic warnings, and the three images.",
+        "height": 120,
+        "width": 3120,
+        "color": 3
+      },
+      "id": "9394e400-4076-48c9-882e-4d7485c2a82b",
+      "name": "Note: Save",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        16,
+        1232
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Runs before any AI spend. Confirms the Shopify app has the permissions this workflow needs,\n// finds the blog to post to, and lists the posts already on the site (the writer links to them\n// and avoids repeating them).\nconst cfg = $('Config').first().json;\n\n\n\nconst shop = $input.first().json ?? {};\nif (shop.errors) throw new Error('Shopify GraphQL error: ' + JSON.stringify(shop.errors).slice(0, 500));\nconst blogs = shop.data?.blogs?.nodes ?? [];\nconst blog = blogs.find(b => b.handle === cfg.blogHandle);\nif (!blog) throw new Error('Blog handle \"' + cfg.blogHandle + '\" not found in Shopify. Available: ' + (blogs.map(b => b.handle).join(', ') || 'none'));\n\nconst base = String(cfg.storeUrl).replace(/\\/+$/, '');\nconst existingArticles = (shop.data?.articles?.nodes ?? []).map(a => ({\n  title: a.title, handle: a.handle, isPublished: a.isPublished,\n  url: a.blog?.handle ? base + '/blogs/' + a.blog.handle + '/' + a.handle : null,\n}));\n\nreturn [{ json: { blogId: blog.id, blogHandle: blog.handle, existingArticles } }];"
+      },
+      "id": "79f10b02-0fa1-4ff0-8fe7-b52f54e82f90",
+      "name": "Check Shopify Setup",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2032,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Builds the research request from the picked sheet row. The AI searches the web itself\n// and reports facts with their sources; the writer may only use numbers found there.\nconst cfg = $('Config').first().json;\nconst t = $('Pick Next Topic').first().json.topic;\nconst shopify = $input.first().json; // from Check Shopify Setup\nconst base = String(cfg.storeUrl).replace(/\\/+$/, '');\n\n// All AI calls go through OpenRouter, so the three model fields in Config must be OpenRouter model IDs.\nconst wrong = ['researchModel', 'writerModel', 'imageModel'].filter(k => !String(cfg[k] || '').includes('/'));\nif (wrong.length) throw new Error('Config: ' + wrong.join(', ') + ' must be OpenRouter model IDs, which contain a slash. For example researchModel = anthropic/claude-sonnet-5.5, writerModel = anthropic/claude-opus-5.5, imageModel = openai/gpt-image-2.5-sunburst.');\n\nconst today = $now.toFormat('d MMMM yyyy');\n\nconst system = [\n  'You are the fact-checker and researcher for a coffee blog. A writer will use your notes to write the article described below, and may only state numbers that appear in your notes. Search the web and report what reliable sources say.',\n  '',\n  'SOURCES, in order of preference',\n  '1. Official and scientific: FDA, USDA FoodData Central, NIH, EFSA, Health Canada, Mayo Clinic, Harvard T.H. Chan School of Public Health, peer-reviewed journals, university extension services.',\n  '2. Coffee bodies: National Coffee Association (ncausa.org, aboutcoffee.org), Specialty Coffee Association, World Coffee Research, International Coffee Organization, Kenya\\'s Agriculture and Food Authority (Coffee Directorate), Nairobi Coffee Exchange.',\n  '3. Independent testing and edited publications with named authors: Consumer Reports, America\\'s Test Kitchen, national newspapers, long-running food and coffee magazines.',\n  '4. For a figure about one brand or chain, try in this order: (a) the company\\'s own website, product page or nutrition page, searching for it by name; (b) a named independent lab test; (c) a caffeine database such as Caffeine Informer. Label every (c) figure \"secondary database\" and copy any caveat the page gives about how the figure was worked out.',\n  'Do not use content farms, anonymous listicles, affiliate \"best of\" pages, forums, Pinterest, social posts, AI-generated summaries or ' + base.replace(/^https?:\\/\\//, '') + '.',\n  '',\n  'RULES',\n  '- Report only what you read in the search results returned to you in this session. Never fill a gap from memory.',\n  '- A long GAPS list is an acceptable result. A figure you are not sure of is not. If you cannot verify something the article needs, put it under GAPS and move on.',\n  '- Every line under KEY FACTS, ANSWERS TO THE SEARCHES and BRAND FIGURES must contain the full URL (starting https://) of the page it came from, typed out in the line itself. A source name without its URL is useless to the writer. Do not use footnote numbers or link text in place of the URL, and do not rely on citations being attached automatically.',\n  '- Give every figure with its unit and serving size. Give the date the page shows, or write \"no date shown\". Never guess a date.',\n  '- You may add a simple conversion (per ounce, oz to ml) so servings can be compared. Mark it \"calculated\".',\n  '- When sources disagree, give both figures and say so.',\n  '- If any single serving you list is above the FDA\\'s daily guidance for adults, include that guidance too.',\n  '- For brands and chains, prefer ones sold in the United States.',\n  '- Searches that mean the same thing get one answer. Group them.',\n  '- Paraphrase. No quotation longer than 15 words.',\n  '',\n  'OUTPUT: plain text under these four headings, in this order. Keep each line short.',\n  'KEY FACTS',\n  '- <fact with unit and serving size> | <publisher> | <date shown, or \"no date shown\"> | <URL> | <note, if any: \"calculated\", \"sources differ\", \"small study\">',\n  'ANSWERS TO THE SEARCHES',\n  '- <search or group of searches>: <answer in one or two sentences> | <URL>',\n  'BRAND FIGURES',\n  '- <brand, product, serving size, figure> | <who published the figure> | <date shown> | <URL> | <\"brand\\'s own figure\", \"brand\\'s figure as reported by <outlet>\", \"independent test\" or \"secondary database\", plus any caveat in a few words>',\n  '(write \"not needed\" under BRAND FIGURES when the article does not need other brands)',\n  'GAPS',\n  '- <what the writer must not state because it could not be verified>',\n].join('\\n');\n\nconst user = [\n  'Today is ' + today + '. Readers are in the United States.',\n  '',\n  'ARTICLE TO RESEARCH',\n  'Working title: ' + t.working_title,\n  'Primary search phrase: ' + t.primary_keyword,\n  'Brief: ' + t.brief,\n  'Searches the article must answer: ' + (t.supporting_searches.join(' | ') || '(none listed)'),\n  'Needs figures for other brands: ' + (t.names_other_brands ? 'YES. Find a sourced figure for each brand the brief or the searches call for. Five to ten well-sourced brands are enough.' : 'no'),\n  'Health-sensitive: ' + (t.health_sensitive ? 'YES. For every health statement use only health authorities and published studies, and note the limits of each study (size, length, who was studied).' : 'no (ordinary care is enough)'),\n].join('\\n');\n\n\nconst request = {\n  model: cfg.researchModel,\n  max_tokens: 6000,\n  reasoning: { effort: 'low', exclude: true }, // less thinking, and keep the thinking text and its signature out of the response\n  messages: [{ role: 'system', content: system }, { role: 'user', content: user }],\n  tools: [{ type: 'openrouter:web_search', parameters: { max_uses: Number(cfg.maxSearches) || 10, max_results: 5 } }],\n};\n\n// blogId and existingArticles are passed along unchanged because Parse Article and Assemble Draft read them from this node.\nreturn [{ json: { request, today, blogId: shopify.blogId, blogHandle: shopify.blogHandle, existingArticles: shopify.existingArticles } }];"
+      },
+      "id": "f70538e3-7543-42fc-9399-f7db615cc2a5",
+      "name": "Build Research Request1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2256,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/images",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.request) }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 1500
+            }
+          },
+          "timeout": 300000
+        }
+      },
+      "id": "295b87bd-0015-48ff-8f66-d8fa452128fc",
+      "name": "AI: Generate Image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1168,
+        896
+      ],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "openRouterApi": {
+          "id": "4sVon2Jb5VlfZk4e",
+          "name": "OpenRouter account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.request) }}",
+        "options": {
+          "timeout": 600000
+        }
+      },
+      "id": "ecf9d98a-4c62-43ac-bca1-5b4ae4c0c5ba",
+      "name": "AI: Research the Topic1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2480,
+        416
+      ],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "openRouterApi": {
+          "id": "4sVon2Jb5VlfZk4e",
+          "name": "OpenRouter account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Builds the writing request: brand facts + selling points + voice + structure + accuracy rules + image brief.\n// Edit the wording here to change how every post is written. Brand facts live in the Config node.\nconst cfg = $('Config').first().json;\n\n// The only tags a post may carry. Edit this list to change the tag filters on the blog.\n// The writer picks one to three; Parse Article drops anything that is not on the list.\nconst ALLOWED_TAGS = ['Caffeine', 'Coffee & Health', 'Kenyan Coffee', 'Roast Guides', 'Flavor & Tasting', 'Brewing Guides', 'Coffee Brands', 'Coffee Basics', 'Decaf & Half-Caff'];\n\n// How much the model \"thinks\" before writing. Thinking is billed as output and shares the maxTokens limit with the post,\n// so too much of it leaves no room for the article. Options: 'minimal', 'low', 'medium', 'high'.\nconst WRITER_REASONING = 'low';\n\nconst pick = $('Pick Next Topic').first().json;\nconst t = pick.topic;\nconst shopify = $('Check Shopify Setup').first().json;\nconst res = $input.first().json ?? {};\n\n// --- Research. The reply carries its sources in one of two ways, so read both:\n//   1. links typed into the notes (one per fact), or\n//   2. a separate citation list with the page, link and the passage used.\nconst msg = res.choices?.[0]?.message;\nconst notes = typeof msg?.content === 'string' ? msg.content.trim() : '';\nconst sources = new Map(); // link -> page title or site name\nfor (const raw of notes.match(/https?:\\/\\/[^\\s|)\\]>\"']+/g) ?? []) {\n  const url = raw.replace(/[.,;:]+$/, '');\n  sources.set(url, url.replace(/^https?:\\/\\/(www\\.)?/, '').split('/')[0]);\n}\nconst citations = [];\nconst seen = new Set();\nfor (const an of msg?.annotations ?? []) {\n  const c = an?.url_citation;\n  if (!c?.url) continue;\n  sources.set(c.url, c.title || c.url);\n  const passage = String(c.content ?? '').replace(/[\\s*#|]+/g, ' ').trim().slice(0, 240);\n  if (seen.has(c.url + passage)) continue;\n  seen.add(c.url + passage);\n  citations.push('- ' + (c.title || c.url) + ' | ' + c.url + ' | \"' + passage + '\"');\n}\nif (notes.length < 300 || sources.size === 0) {\n  const why = res.error?.description ?? res.error?.message ?? res.choices?.[0]?.error?.message\n    ?? (notes.length < 300 ? 'it returned almost no notes' : 'it returned no source links at all, so it probably did not search the web');\n  throw new Error('No post was written for \"' + t.working_title + '\" because the research was not usable: ' + why + '. The row is still Queued. Check the output of \"AI: Research the Topic\".');\n}\nconst researchProblem = res.choices[0].finish_reason === 'length' ? 'The web research was cut off before it finished, so the notes may be incomplete.' : '';\n\n// --- Pages the post may link to on our own site\nconst base = String(cfg.storeUrl).replace(/\\/+$/, '');\nconst links = new Map();\nfor (const u of t.internal_links) links.set(u.replace(/\\/+$/, ''), 'Suggested for this topic');\nfor (const line of String(cfg.linkTargets || '').split('\\n')) {\n  const [u, label] = line.split('|').map(s => s.trim());\n  if (/^https?:\\/\\//.test(u || '') && !links.has(u.replace(/\\/+$/, ''))) links.set(u.replace(/\\/+$/, ''), label || 'Store page');\n}\nfor (const a of shopify.existingArticles) {\n  if (a.isPublished && a.url && !links.has(a.url)) links.set(a.url, 'Blog post: ' + a.title);\n}\nconst allowedInternal = [...links.entries()].map(([url, label]) => ({ url, label }));\n\nconst monthYear = $now.toFormat('MMMM yyyy');\nconst words = Number(cfg.wordCount) || 1500;\n\nconst brandsRule = t.names_other_brands\n  ? 'Other brands: name a brand only with a figure from RESEARCH, linked, stated neutrally, with \"as listed when we checked in ' + monthYear + '\". If the only source is a secondary database, name it and its caveat once above the table and say so in editor_notes. Do not rank brands by quality or tell readers to avoid one. Leave out any brand without a sourced figure. Never put Kirenge Gold in a ranking of high-caffeine brands.'\n  : 'Other brands: do not name any other coffee brand, coffee chain or retailer.';\n\nconst healthBlock = t.health_sensitive ? [\n  '',\n  '=== HEALTH-SENSITIVE TOPIC ===',\n  '- Attribute and link every health statement to a named source in RESEARCH, and give the size and length of any study.',\n  '- Include one sentence telling readers who are pregnant, have a medical condition or take medication to ask their doctor.',\n  '- No promises and no \"best coffee for weight loss\" picks. Do not offer our coffee as a way to get a health effect; the call to action is about taste and freshness.',\n] : [];\n\nconst system = [\n  'You write the Kirenge Gold coffee blog for home coffee drinkers in the United States who typed a question into Google. Give the clearest, most accurate answer to that question in our voice, and make clear why our coffee is worth buying.',\n  '',\n  '=== BRAND FACTS: say nothing about Kirenge Gold beyond these ===',\n  String(cfg.brandFacts).trim(),\n  '',\n  '=== SELLING POINTS: every post states the first four at least once, in the section about our coffee and in the call to action ===',\n  '- 100% Arabica beans.',\n  '- Single origin: one family farm, Kirenge Farm in Kiambu County, Kenya, growing coffee since the 1950s. Never mention cooperatives, partner farms or other regions as sources.',\n  '- Low acid: a smooth cup. For the light and medium roasts say \"bright, fruity flavor\", not \"acidity\" (this overrides the tasting notes above).',\n  '- Fresh: roasted in small batches every week in Atlanta and shipped within 48 hours.',\n  '- Use where they fit: hand-picked; grown at 1,500 to 1,800 meters on red volcanic soil; SL-28 and SL-34 varieties; light, medium and dark roast as whole bean, ground or pods; free shipping on subscriptions and on orders over $55.',\n  '- Call the coffee \"100% Kenyan Arabica\". Never call it \"AA\", and leave Kenya\\'s AA grade out unless the topic itself is about coffee grades.',\n  '',\n  '=== VOICE ===',\n  '- A coffee-farming family talking to a friend: warm, plain, confident. \"We\" and \"our\" for the farm and company, \"you\" for the reader, never \"I\".',\n  '- Plain American English, short sentences, paragraphs of one to three sentences. Explain a coffee term the first time you use it.',\n  '- Be specific (\"grind coarser\", \"195 to 205°F\"). US units first, metric in parentheses.',\n  '- No hype words (elevate, indulge, unleash, unlock, journey, game-changer, delve), no exclamation marks, no emoji, no question as the opening line.',\n  '',\n  '=== STRUCTURE ===',\n  '1. Open with <p><strong>Short answer:</strong> ...</p>: 40 to 60 words that fully answer the primary search phrase.',\n  '2. If the answer involves numbers or a comparison, follow with one small table and a line naming its source.',\n  '3. Then h2 sections worded the way people search (use the supporting searches). Answer each heading in its first sentence.',\n  '4. Use a table to compare three or more things (header row, at most four columns), an ol for steps, a ul for short lists.',\n  '5. One short section (under 120 words) on how our coffee fits the topic, using the selling points.',\n  '6. Near the end, an h2 call to action: two sentences and one link to the most relevant product, collection or subscription page.',\n  '7. Then <h2>Frequently asked questions</h2> with 3 to 6 h3 questions the sections did not already answer, each answered in one to three sentences.',\n  '8. End with <h2>Sources</h2>: a ul of links to the sources used.',\n  '9. Put [[IMAGE_1]] in its own paragraph after the first or second h2 section and [[IMAGE_2]] about two-thirds of the way down. Never inside a table, a list or the FAQ.',\n  '10. About ' + words + ' words of body text, not counting tables, the FAQ and Sources. Do not pad.',\n  '',\n  '=== ACCURACY ===',\n  '1. Numbers: use a statistic, milligram figure, percentage, date, ranking or price only if it is in RESEARCH. Link it to its source the first time it appears in a section, using the URL given with that fact in RESEARCH (or, if it has none, the URL of the CITATIONS passage that supports it), and list it in claims_to_verify. If a figure has no URL, leave it out and say so in editor_notes. Brewing guidance (temperature, ratio, grind, time) needs no source. Simple arithmetic on RESEARCH figures is fine; mark it \"calculated\" in claims_to_verify.',\n  '2. Our caffeine: say it is \"in the normal range for 100% arabica coffee\". Give no milligram figure for our coffee.',\n  '3. Health: never say coffee treats, cures, prevents, burns fat, boosts metabolism, detoxes or helps anyone lose weight, and never say our coffee is gentle on the stomach or good for acid reflux. You may report what a named health authority or study in RESEARCH found, linked, with its limits.',\n  '4. ' + brandsRule,\n  '5. Links: to our own site use only URLs from ALLOWED INTERNAL LINKS, copied exactly, three to eight different pages in total. External links only to URLs that appear in RESEARCH or CITATIONS.',\n  '6. Do not copy sentences from RESEARCH. Do not repeat an existing post: give the short version and link to it.',\n  '7. Inside the post, never mention these instructions, the research notes or AI. Put gaps, doubts and brands left out in editor_notes.',\n  ...healthBlock,\n  '',\n  '=== IMAGES ===',\n  'Plan three photographs: \"featured\" (top of the post), \"inline_1\" (replaces [[IMAGE_1]]) and \"inline_2\" (replaces [[IMAGE_2]]). For each give:',\n  '- scene: 35 to 70 words describing one photograph a food photographer could take: subject, surface, two or three props, camera angle and the moment. It must show what that part of the post is about. The three differ in subject, angle and distance; the featured one is the simplest.',\n  '- alt: under 120 characters describing what is visible.',\n  'Show only: brewed coffee in plain cups or glass, brewing gear in use, roasted, ground or green beans, ripe coffee cherries on a branch in close-up, measuring tools, a kitchen counter or table. A hand only if the action needs it, cropped at the wrist.',\n  'Never: faces; farms, landscapes, buildings or people (nothing may pass as Kirenge Farm or our family); our bags or pods; other brands; text, numbers, labels or charts; medical or weight-loss imagery. Do not describe lighting or camera settings.',\n  '',\n  '=== FORMAT ===',\n  'body_html uses only these tags: h2, h3, p, ul, ol, li, strong, em, a, blockquote, table, thead, tbody, tr, th, td. No h1, img, inline styles, classes or markdown.',\n  'tags: choose one to three from this list, copied exactly, and no others: ' + ALLOWED_TAGS.join(' | ') + '.',\n  'Deliver the post only by calling the submit_article tool, once. Do not reply in plain text.',\n].join('\\n');\n\nconst user = [\n  'Today is ' + $now.toFormat('d MMMM yyyy') + '.',\n  '',\n  'TOPIC',\n  'Working title: ' + t.working_title,\n  'Primary search phrase: ' + t.primary_keyword,\n  'Brief from the content plan: ' + t.brief,\n  'Searches this post must answer (real Google searches that reached the site): ' + (t.supporting_searches.join(' | ') || '(none listed)'),\n  '',\n  'RESEARCH',\n  notes,\n  ...(citations.length ? [\n    '',\n    'CITATIONS: pages the research read, with the passage it took from each. Where a fact above has no link of its own, find the passage that supports it and use that URL.',\n    citations.join('\\n'),\n  ] : []),\n  '',\n  'ALLOWED INTERNAL LINKS',\n  allowedInternal.map(l => '- ' + l.url + ' | ' + l.label).join('\\n'),\n  '',\n  'POSTS ALREADY ON THE BLOG (do not repeat them)',\n  JSON.stringify(shopify.existingArticles.map(a => a.title)),\n  '',\n  'Write the post, then call the submit_article tool once with the finished post.',\n].join('\\n');\n\nconst imageItem = {\n  type: 'object',\n  properties: {\n    scene: { type: 'string', description: 'One photographable scene, 35 to 70 words.' },\n    alt: { type: 'string', description: 'Alt text under 120 characters.' },\n  },\n  required: ['scene', 'alt'],\n};\n\nconst request = {\n  model: cfg.writerModel,\n  max_tokens: Number(cfg.maxTokens) || 16000,\n  reasoning: { effort: WRITER_REASONING, exclude: true }, \n  messages: [{ role: 'system', content: system }, { role: 'user', content: user }],\n  tools: [{ type: 'function', function: {\n    name: 'submit_article',\n    description: 'Submit the finished blog post and its three image briefs.',\n    parameters: {\n      type: 'object',\n      properties: {\n        title: { type: 'string', description: 'Headline shown on the page. Under 65 characters. Contains the primary search phrase naturally.' },\n        seo_title: { type: 'string', description: 'Title for Google results. Under 60 characters. Primary search phrase near the start.' },\n        meta_description: { type: 'string', description: '140 to 155 characters. States the answer and gives a reason to click.' },\n        handle: { type: 'string', description: 'URL slug: lowercase, hyphenated, 3 to 6 words, no year.' },\n        summary_html: { type: 'string', description: 'One or two sentences in a single <p>, shown on the blog listing.' },\n        tags: { type: 'array', items: { type: 'string', enum: ALLOWED_TAGS }, description: 'One to three tags from the allowed list, copied exactly.' },\n        body_html: { type: 'string', description: 'The full post as HTML, with [[IMAGE_1]] and [[IMAGE_2]] markers.' },\n        images: {\n          type: 'object',\n          properties: { featured: imageItem, inline_1: imageItem, inline_2: imageItem },\n          required: ['featured', 'inline_1', 'inline_2'],\n        },\n        claims_to_verify: {\n          type: 'array',\n          description: 'Every figure, date, ranking or factual claim an editor should check before publishing, with the URL it came from.',\n          items: { type: 'object', properties: { claim: { type: 'string' }, source_url: { type: 'string' } }, required: ['claim', 'source_url'] },\n        },\n        editor_notes: { type: 'string', description: 'Anything the editor should know: gaps in the research, brands left out for lack of a source, where a real farm or product photo would be better than a generated one. Empty string if nothing.' },\n      },\n      required: ['title', 'seo_title', 'meta_description', 'handle', 'summary_html', 'tags', 'body_html', 'images', 'claims_to_verify', 'editor_notes'],\n    },\n  } }],\n  tool_choice: 'auto',\n};\n\nreturn [{ json: {\n  request,\n  researchOk: true,\n  researchProblem,\n  researchSources: [...sources.entries()].map(([url, title]) => ({ url, title })),\n  allowedInternal: allowedInternal.map(l => l.url),\n  allowedTags: ALLOWED_TAGS,\n} }];"
+      },
+      "id": "cb095001-f56e-4c9c-a257-7d30e9e4a396",
+      "name": "Build Writing Request2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        64,
+        896
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.request) }}",
+        "options": {
+          "timeout": 600000
+        }
+      },
+      "id": "6a3eda1c-937f-4c41-9c82-136db25af3a4",
+      "name": "AI: Write Article1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        304,
+        896
+      ],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "openRouterApi": {
+          "id": "4sVon2Jb5VlfZk4e",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validates and cleans the AI article, styles tables for phones, and runs automatic checks\n// whose results go in the review email. Nothing here publishes anything.\nconst cfg = $('Config').first().json;\nconst t = $('Pick Next Topic').first().json.topic;\nconst res = $input.first().json ?? {};\n\n// Finds another node's output even when n8n has added a number to its name (for example\n// \"Build Writing Request2\"), which happens when a node is pasted while an older copy is still on the canvas.\nconst fromNode = (base) => {\n  for (const name of [base, base + '1', base + '2', base + '3', base + '4', base + '5']) {\n    try { const j = $(name).first().json; if (j && Object.keys(j).length) return j; } catch (e) { /* not this one */ }\n  }\n  return null;\n};\nconst wr = fromNode('Build Writing Request');\nif (!wr?.allowedInternal) throw new Error('Parse Article could not read the output of \"Build Writing Request\". Check that the node exists, is connected before \"AI: Write Article\", and is named \"Build Writing Request\" (a number on the end is fine).');\nconst existingArticles = (fromNode('Check Shopify Setup') ?? fromNode('Build Research Request'))?.existingArticles ?? [];\n\n// OpenRouter returns the article as the arguments of the submit_article tool call, as a JSON string.\nconst choice = res.choices?.[0];\nconst err = res.error ?? choice?.error;\nif (err) throw new Error('AI error: ' + String(err.description ?? err.message ?? JSON.stringify(err)).slice(0, 500));\nconst cutOff = 'The article was cut off before it finished. Raise Config.maxTokens or lower Config.wordCount.';\nif (choice?.finish_reason === 'length') throw new Error(cutOff);\nconst call = (choice?.message?.tool_calls ?? []).find(c => c?.function?.name === 'submit_article') ?? choice?.message?.tool_calls?.[0];\nlet raw = call?.function?.arguments ?? choice?.message?.content;\nif (typeof raw === 'string') raw = raw.trim().replace(/^```(?:json)?\\s*/i, '').replace(/```$/, '');\nlet a;\ntry { a = typeof raw === 'string' ? JSON.parse(raw) : raw; }\ncatch (e) { throw new Error('The AI returned an article that is not valid JSON, usually because it was cut off. ' + cutOff); }\nif (!a?.title || !a?.body_html) throw new Error('AI did not return an article. Response: ' + JSON.stringify(res).slice(0, 500));\n\nconst checks = [];\nconst base = String(cfg.storeUrl).replace(/\\/+$/, '');\nconst host = (u) => ((String(u ?? '').match(/^https?:\\/\\/([^\\/?#:]+)/i) || [])[1] || '').toLowerCase().replace(/^www\\./, '');\nconst ownHost = host(base);\nconst norm = (u) => String(u).split('#')[0].split('?')[0].replace(/\\/+$/, '');\nconst allowed = new Set(wr.allowedInternal.map(norm).concat([base]));\nconst researchHosts = new Set((wr.researchSources ?? []).map(s => host(s.url)).filter(Boolean));\n\n// --- Strip anything that should never reach the storefront\nconst clean = (html) => String(html ?? '')\n  .replace(/<!--[\\s\\S]*?-->/g, '')\n  .replace(/<(script|style|iframe|object|embed|form)\\b[\\s\\S]*?<\\/\\1>/gi, '')\n  .replace(/<\\/?(script|style|iframe|object|embed|form|input|img|link|meta|figure|figcaption|div|span)\\b[^>]*>/gi, '')\n  .replace(/\\s(on\\w+|style|class|id)\\s*=\\s*(\"[^\"]*\"|'[^']*'|[^\\s>]+)/gi, '')\n  .replace(/<(\\/?)h1\\b[^>]*>/gi, '<$1h2>')\n  .trim();\n\n// --- Links: our own site only from the allowed list, no AI tools, no javascript\nlet removedLinks = [];\nlet offResearch = [];\nconst fixLinks = (html) => html.replace(/<a\\b([^>]*)>([\\s\\S]*?)<\\/a>/gi, (m, attrs, text) => {\n  const href = (attrs.match(/href\\s*=\\s*\"([^\"]*)\"/i) || attrs.match(/href\\s*=\\s*'([^']*)'/i) || [])[1];\n  if (!href || !/^https?:\\/\\//i.test(href)) { removedLinks.push(href || '(empty link)'); return text; }\n  const h = host(href);\n  if (/(^|\\.)(claude\\.ai|chatgpt\\.com|openai\\.com|anthropic\\.com|gemini\\.google\\.com|perplexity\\.ai)$/.test(h)) { removedLinks.push(href); return text; }\n  if (h === ownHost) {\n    if (!allowed.has(norm(href))) { removedLinks.push(href); return text; }\n    return '<a href=\"' + href.replace(/\"/g, '%22') + '\">' + text + '</a>';\n  }\n  if (!researchHosts.has(h)) offResearch.push(href);\n  return '<a href=\"' + href.replace(/\"/g, '%22') + '\" target=\"_blank\" rel=\"noopener\">' + text + '</a>';\n});\n\n// --- Tables that fit a phone screen (same styling as the grind and storage pages)\nconst styleTables = (html) => html\n  .replace(/<table\\b[^>]*>/gi, '<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0;\"><table style=\"width:100%;border-collapse:collapse;table-layout:auto;font-size:clamp(12px,3.6vw,15px);margin:0;\">')\n  .replace(/<\\/table>/gi, '</table></div>')\n  .replace(/<th\\b[^>]*>/gi, '<th style=\"background:#EDE4D3;text-align:left;padding:7px 6px;border:1px solid #d9cfbd;vertical-align:top;overflow-wrap:break-word;word-break:normal;\">')\n  .replace(/<td\\b[^>]*>/gi, '<td style=\"padding:7px 6px;border:1px solid #e3dccf;vertical-align:top;overflow-wrap:break-word;word-break:normal;\">');\n\nconst bodyClean = fixLinks(clean(a.body_html));\nconst summary = clean(a.summary_html).replace(/<a\\b[^>]*>([\\s\\S]*?)<\\/a>/gi, '$1');\nconst text = bodyClean.replace(/\\[\\[IMAGE_\\d\\]\\]/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\\s+/g, ' ').trim();\nconst words = text.split(' ').filter(Boolean).length;\nconst target = Number(cfg.wordCount) || 1500;\nif (words < Math.max(400, target * 0.4)) throw new Error('The article is only ' + words + ' words, so it was not saved. Run the workflow again.');\nconst body = styleTables(bodyClean);\n\n// --- Automatic checks (shown in the review email; none of them blocks the draft)\nconst count = (re) => (text.match(re) || []).length;\nconst flag = (re, label) => { const n = count(re); if (n) checks.push(label + ' (' + n + '×)'); };\nflag(/\\bAA\\b/g, 'Mentions \"AA\". Fine if it explains the grade in general, not fine if it describes our coffee');\nflag(/\\borganic\\b/gi, 'Uses the word \"organic\"');\nflag(/\\blab[- ]tested\\b/gi, 'Says \"lab-tested\"');\nflag(/\\broasted to order\\b/gi, 'Says \"roasted to order\"');\nflag(/\\b(certified|fair trade|award[- ]winning)\\b/gi, 'Mentions a certification or award');\nflag(/\\b(co-?operatives?|partner farms?)\\b/gi, 'Mentions cooperatives or partner farms');\nflag(/\\b(burns? fat|fat[- ]burning|boosts? (your )?metabolism|detox\\w*|suppress\\w* (your )?appetite)\\b/gi, 'Fat-burning, metabolism, detox or appetite wording');\nif (!t.health_sensitive) flag(/\\b(lose weight|weight loss)\\b/gi, 'Talks about weight loss on a topic that is not marked health-sensitive');\nflag(/\\b(cur(e|es|ing)|prevent(s|ing)?|treat(s|ing)?|(reduc|lower)(e|es|ing) (the|your) risk of|protect(s|ing)? against)\\b[^.]{0,60}\\b(disease|cancer|diabetes|alzheimer|parkinson|stroke|depression|heart|liver|dementia)/gi, 'Health-claim wording (cure, prevent, treat, lower the risk of an illness)');\nflag(/\\b(elevate|indulge|unleash|unlock|game-changer|delve|coffee lovers?)\\b/gi, 'Off-brand marketing words');\nif (count(/\\$\\s?\\d/g) > count(/\\$\\s?55\\b/g)) checks.push('States a price other than the $55 free-shipping threshold');\nif (/!/.test(text)) checks.push('Contains an exclamation mark (fine only if it is part of a brand name)');\nif (!/Short answer/i.test(text.slice(0, 200))) checks.push('Does not open with a \"Short answer\" paragraph');\nif (!/<table/i.test(body)) checks.push('No table in the post');\nif (!/Frequently asked questions/i.test(text)) checks.push('No FAQ section');\nif (words < target * 0.7) checks.push('Short: ' + words + ' words against a target of ' + target);\nif (removedLinks.length) checks.push('Removed ' + removedLinks.length + ' link(s) that were not on the allowed list: ' + removedLinks.slice(0, 5).join(', '));\nif (offResearch.length) checks.push(offResearch.length + ' external link(s) point to sites that were not in the research: ' + [...new Set(offResearch)].slice(0, 5).join(', '));\nconst internalCount = (body.match(new RegExp('href=\"https?://(www\\\\.)?' + ownHost.replace(/\\./g, '\\\\.'), 'gi')) || []).length;\nif (internalCount < 2) checks.push('Only ' + internalCount + ' link(s) to your own site');\nif (t.health_sensitive) checks.push('Health-sensitive topic: read every health statement against its source before publishing');\nif (t.names_other_brands) checks.push('Names other brands: check each brand figure against its source before publishing');\nif (!wr.researchOk) checks.push('RESEARCH WAS WEAK: ' + wr.researchProblem + ' Check every figure by hand');\nelse if (wr.researchProblem) checks.push(wr.researchProblem);\n\n// --- Title, SEO fields, URL handle\nconst trimTo = (s, n) => { s = String(s ?? '').replace(/\\s+/g, ' ').trim(); if (s.length <= n) return s; const cut = s.slice(0, n + 1); return cut.slice(0, cut.lastIndexOf(' ') > 20 ? cut.lastIndexOf(' ') : n).replace(/[\\s,;:.\\-]+$/, ''); };\nconst title = String(a.title).replace(/\\s+/g, ' ').trim();\nconst seoTitle = trimTo(a.seo_title || title, 60);\nconst metaDescription = trimTo(a.meta_description, 158);\nif (title.length > 70) checks.push('Title is ' + title.length + ' characters. Under 65 is better');\n\nconst slug = (s) => String(s ?? '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '')\n  .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70).replace(/-+$/g, '');\nconst taken = new Set(existingArticles.map(e => e.handle));\nconst baseSlug = slug(a.handle) || slug(title) || 'blog-post';\nlet handle = baseSlug;\nfor (let n = 2; taken.has(handle); n++) handle = baseSlug + '-' + n;\n\n// Tags: only ones on the fixed list in Build Writing Request are kept, in that list's spelling.\nconst pickedTags = [...new Set((Array.isArray(a.tags) ? a.tags : []).map(x => String(x).trim()).filter(Boolean))];\nconst allowedTags = Array.isArray(wr.allowedTags) ? wr.allowedTags : [];\nconst tagKey = (x) => x.toLowerCase().replace(/&amp;/g, '&').replace(/\\s+/g, ' ');\nconst tagByKey = new Map(allowedTags.map(x => [tagKey(x), x]));\nconst tags = allowedTags.length\n  ? [...new Set(pickedTags.map(x => tagByKey.get(tagKey(x))).filter(Boolean))].slice(0, 3)\n  : pickedTags.slice(0, 8);\nif (allowedTags.length) {\n  const dropped = pickedTags.filter(x => !tagByKey.has(tagKey(x)));\n  if (dropped.length) checks.push('Dropped tag(s) that are not on your list: ' + dropped.join(', '));\n  if (!tags.length) checks.push('The post has no tag, because none of the writer\\'s tags were on your list. Add one by hand');\n}\n\nconst img = a.images ?? {};\nconst one = (k) => ({ scene: String(img[k]?.scene ?? '').replace(/\\s+/g, ' ').trim(), alt: trimTo(String(img[k]?.alt ?? '').replace(/\"/g, ''), 125) });\nconst images = { featured: one('featured'), inline_1: one('inline_1'), inline_2: one('inline_2') };\n\nreturn [{ json: {\n  title, seoTitle, metaDescription, handle, summary, tags, body, words, images, checks,\n  claimsToVerify: Array.isArray(a.claims_to_verify) ? a.claims_to_verify : [],\n  editorNotes: String(a.editor_notes ?? '').trim(),\n} }];"
+      },
+      "id": "e8b086f1-be8b-477f-842f-f8ad17d823cd",
+      "name": "Parse Article1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        896
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// One item per image. Each prompt = the fixed brand photo style (Config.imageStyle)\n// + the scene the writer planned for that spot + framing notes.\nconst cfg = $('Config').first().json;\nconst art = $input.first().json;\n\nconst framing = {\n  featured: 'FRAMING: landscape, 3:2. This is the header image for the article. One strong, simple subject that still reads at thumbnail size, with calm space toward the edges so it can be cropped to 16:9 or square.',\n  inline: 'FRAMING: landscape, 3:2. This image sits inside the article next to the text it illustrates. Show the subject close enough to see its detail and texture.',\n};\nconst slots = [\n  { slot: 'featured', key: 'featured', suffix: 'featured', frame: framing.featured },\n  { slot: 'inline_1', key: 'inline_1', suffix: '1', frame: framing.inline },\n  { slot: 'inline_2', key: 'inline_2', suffix: '2', frame: framing.inline },\n];\n\n// OpenRouter's Image API (POST /api/v1/images) takes a model and a prompt, plus options that differ by model:\n// OpenAI image models accept \"quality\"; Google's accept \"resolution\" (1K, 2K or 4K). Only the supported one is sent.\nconst model = String(cfg.imageModel || '');\nconst options = {};\nif (/^openai\\//i.test(model)) options.quality = /^(low|medium|high|xhigh|max|auto)$/i.test(String(cfg.imageQuality || '')) ? String(cfg.imageQuality).toLowerCase() : 'high';\nif (/^google\\//i.test(model)) options.resolution = /^(1K|2K|4K)$/i.test(String(cfg.imageSize || '')) ? String(cfg.imageSize).toUpperCase() : '1K';\nconst fallback = 'A cream ceramic cup of black coffee on a dark wood table beside a small pile of roasted coffee beans, seen from 45 degrees, with fine steam rising from the cup.';\nreturn slots.map(s => {\n  const scene = art.images[s.key]?.scene || fallback;\n  const prompt = [\n    String(cfg.imageStyle).trim(),\n    '',\n    'SCENE: ' + scene,\n    '',\n    s.frame,\n    'No text or logos anywhere in the picture. All cups, bags, jars and equipment are plain and unbranded.',\n  ].join('\\n');\n  return { json: {\n    slot: s.slot,\n    alt: art.images[s.key]?.alt || art.title,\n    fileBase: art.handle + '-' + s.suffix, // the extension is added once the image format is known\n    scene,\n    request: { model, prompt, aspect_ratio: '16:9', n: 1, ...options },\n  } };\n});"
+      },
+      "id": "223d5339-b80b-4f0d-b5dd-fbb3656b4b5f",
+      "name": "Build Image Prompts1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        816,
+        896
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Sorts the image results into \"made\" and \"failed\". If none were made, the post is still\n// saved, without images, and the review email says why.\n\n// Finds another node's items even when n8n has added a number to its name (for example \"Build Image Prompts1\").\nconst itemsOf = (base) => {\n  for (const name of [base, base + '1', base + '2', base + '3', base + '4', base + '5']) {\n    try { const all = $(name).all(); if (all.length) return all; } catch (e) { /* not this one */ }\n  }\n  throw new Error('Could not find the output of \"' + base + '\". Check that the node exists and ran before this one.');\n};\nconst reqs = itemsOf('Build Image Prompts');\nconst outs = $input.all();\nconst ext = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp' };\n// The Image API returns { data: [{ b64_json, media_type }] }. If media_type is missing, read it from the first bytes.\nconst sniff = (b64) => b64.startsWith('/9j/') ? 'image/jpeg' : b64.startsWith('iVBOR') ? 'image/png' : b64.startsWith('UklGR') ? 'image/webp' : '';\nconst images = [];\nconst failed = [];\nouts.forEach((it, i) => {\n  const r = reqs[it.pairedItem?.item ?? i]?.json;\n  if (!r) return;\n  const d = it.json?.data?.[0];\n  const b64 = typeof d?.b64_json === 'string' ? d.b64_json : '';\n  const mime = String(d?.media_type || sniff(b64)).toLowerCase();\n  if (b64.length > 1000 && ext[mime]) {\n    images.push({ index: i, slot: r.slot, alt: r.alt, mime, filename: r.fileBase + '.' + ext[mime] });\n  } else {\n    const err = it.json?.error;\n    failed.push({ slot: r.slot, reason: String(err?.description ?? err?.message ?? (b64 ? 'unsupported image format' : 'no image returned')).slice(0, 300) });\n  }\n});\nfor (const r of reqs) if (!images.some(x => x.slot === r.json.slot) && !failed.some(x => x.slot === r.json.slot)) failed.push({ slot: r.json.slot, reason: 'no result' });\n\nconst graphql = {\n  query: 'mutation Stage($input: [StagedUploadInput!]!) { stagedUploadsCreate(input: $input) { stagedTargets { url resourceUrl parameters { name value } } userErrors { field message } } }',\n  variables: { input: images.map(im => ({ filename: im.filename, mimeType: im.mime, resource: 'IMAGE', httpMethod: 'PUT' })) },\n};\nreturn [{ json: { count: images.length, images, failed, graphql } }];"
+      },
+      "id": "c056c337-7b24-471a-b38f-e723a4f88f68",
+      "name": "Collect Images1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1472,
+        896
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Builds the request that turns this week's blog post into a LinkedIn post.\n// Runs after the blog draft is saved and its email is sent, so a problem here never affects the blog post.\n// LinkedIn only lets outside tools publish posts (up to 3,000 characters), not long-form articles,\n// so the piece is written to fit a post: about 400 words.\n\n// Who it is written for, how long it is, and how much the model \"thinks\" first ('minimal', 'low', 'medium', 'high').\nconst AUDIENCE = 'professionals in the United States reading LinkedIn: people who drink coffee through the working day, and people who choose the coffee for an office, cafe or shop';\nconst WORDS = '350 to 450';\nconst REASONING = 'low';\n\n// Finds another node's output even when n8n has added a number to its name (for example \"Parse Article1\").\nconst itemsOf = (base) => {\n  for (const name of [base, base + '1', base + '2', base + '3', base + '4', base + '5']) {\n    try { const all = $(name).all(); if (all.length) return all; } catch (e) { /* not this one */ }\n  }\n  return [];\n};\nconst maybe = (base) => itemsOf(base)[0]?.json ?? null;\nconst need = (base) => {\n  const j = maybe(base);\n  if (!j) throw new Error('Could not find the output of \"' + base + '\". Check that the node exists, ran before this one, and is named \"' + base + '\" (a number on the end is fine).');\n  return j;\n};\nconst cfg = need('Config');\nconst t = need('Pick Next Topic').topic;\nconst art = need('Parse Article');\n\n// --- Where the blog post will live once you publish it in Shopify\nconst base = String(cfg.storeUrl).replace(/\\/+$/, '');\nconst handle = maybe('Shopify: Create Draft Post')?.data?.articleCreate?.article?.handle ?? art.handle;\nconst blogUrl = base + '/blogs/' + cfg.blogHandle + '/' + handle;\n\n// --- The blog post as the model sees it: plain HTML, no styling, no image markers\nconst post = String(art.body)\n  .replace(/<\\/?div\\b[^>]*>/gi, '')\n  .replace(/\\s(style|target|rel)=\"[^\"]*\"/gi, '')\n  .replace(/(<p>\\s*)?\\[\\[IMAGE_\\d\\]\\](\\s*<\\/p>)?/gi, '')\n  .replace(/\\n{3,}/g, '\\n\\n').trim();\n\nconst system = [\n  'You turn a Kirenge Gold blog post into a long LinkedIn post for ' + AUDIENCE + '.',\n  'Write a new piece, not a summary and not a reworded copy. Pick the one idea in the post that is most useful or surprising to that reader, build the whole piece around it, and leave the rest to the blog. Do not reuse sentences from the post.',\n  '',\n  '=== BRAND FACTS: say nothing about Kirenge Gold beyond these ===',\n  String(cfg.brandFacts).trim(),\n  '',\n  '=== SELLING POINTS: state all four once, together, in one short paragraph (two or three sentences) near the end ===',\n  '- 100% Arabica beans.',\n  '- Single origin: one family farm, Kirenge Farm in Kiambu County, Kenya, growing coffee since the 1950s.',\n  '- Low acid: a smooth cup. Say \"bright, fruity flavor\", not \"acidity\".',\n  '- Fresh: roasted in small batches every week in Atlanta and shipped within 48 hours.',\n  'Call the coffee \"100% Kenyan Arabica\". Never call it \"AA\".',\n  '',\n  '=== VOICE ===',\n  'A coffee-farming family talking to a colleague: warm, plain, confident. \"We\" and \"our\" for the farm and company, \"you\" for the reader, never \"I\". Plain American English, short sentences, paragraphs of one to three sentences.',\n  'No hype words (elevate, indulge, unleash, unlock, journey, game-changer, delve), no exclamation marks, no emoji, no question as the opening line.',\n  '',\n  '=== STRUCTURE ===',\n  '1. The first line is a headline under 90 characters: a plain claim or a how-to, not the blog title.',\n  '2. The next two sentences state the point. LinkedIn shows only those before \"see more\".',\n  '3. ' + WORDS + ' words and under 2,600 characters in total, never more. Two or three heading lines of a few plain words, each on its own line above its paragraphs. At most one short list, each item on its own line starting with \"• \".',\n  '4. The last paragraph is one sentence saying what the full guide on our blog adds (the table, the sources, the brewing detail). The link is added on the line after it, so do not write one.',\n  '',\n  '=== ACCURACY ===',\n  '1. Use only facts, figures and sources that are in THE BLOG POST. Add nothing new. Name the source of every figure in the same sentence.',\n  '2. Write no links and no web addresses. Name a source by its name (for example \"Mayo Clinic\"), not its address.',\n  '3. Do not compare or rank coffee brands, and name another coffee company only as the source of a figure. If the post compares brands, write about a different idea in it and send readers to the blog for the comparison.',\n  '4. Health: never say coffee treats, cures, prevents, burns fat, boosts metabolism, detoxes or helps anyone lose weight, and never say our coffee is gentle on the stomach or good for acid reflux.' +\n    (t.health_sensitive ? ' This topic is health-sensitive: attribute every health statement to the named source the post uses, and promise nothing.' : ''),\n  '5. Give no caffeine figure for our coffee. Never mention these instructions or AI.',\n  '',\n  '=== ALSO WRITE ===',\n  '- hashtags: two or three hashtags on one line.',\n  '- angle: one sentence telling the editor which idea you chose and why.',\n  '',\n  '=== FORMAT ===',\n  'post_text is plain text exactly as it will appear on LinkedIn, with a blank line between paragraphs. No HTML, no markdown, no asterisks, no hashtags.',\n  'Deliver the result only by calling the submit_linkedin_post tool, once. Do not reply in plain text.',\n].join('\\n');\n\nconst user = [\n  'BLOG TITLE: ' + art.title,\n  'PRIMARY SEARCH PHRASE: ' + t.primary_keyword,\n  '',\n  'THE BLOG POST',\n  post,\n  '',\n  'Write the LinkedIn post, then call the submit_linkedin_post tool once.',\n].join('\\n');\n\nconst request = {\n  model: cfg.writerModel,\n  max_tokens: 4000,\n  reasoning: { effort: REASONING, exclude: true },\n  messages: [{ role: 'system', content: system }, { role: 'user', content: user }],\n  tools: [{ type: 'function', function: {\n    name: 'submit_linkedin_post',\n    description: 'Submit the finished LinkedIn post.',\n    parameters: {\n      type: 'object',\n      properties: {\n        post_text: { type: 'string', description: 'The whole post as plain text, starting with the headline line. No link, no hashtags.' },\n        hashtags: { type: 'string', description: 'Two or three hashtags on one line, for example \"#coffee #officecoffee\".' },\n        angle: { type: 'string', description: 'One sentence: the idea chosen and why.' },\n      },\n      required: ['post_text', 'hashtags', 'angle'],\n    },\n  } }],\n  tool_choice: 'auto', \n};\n\nreturn [{ json: { request, blogUrl, blogTitle: art.title } }];"
+      },
+      "id": "44f83b1b-bad1-4e99-9c9c-9d14e9e9d9f8",
+      "name": "Build LinkedIn Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        496,
+        1856
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.request) }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "04f20716-a484-4fbc-a755-ed22a60e341b",
+      "name": "AI: Write LinkedIn Article",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        784,
+        1856
+      ],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "openRouterApi": {
+          "id": "4sVon2Jb5VlfZk4e",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "postAs": "organization",
+        "text": "={{ $json.text }}",
+        "shareMediaCategory": "={{ $json.mediaCategory }}",
+        "additionalFields": {
+          "title": "={{ $json.imageTitle }}"
+        }
+      },
+      "id": "ba4b0ca7-5af8-4ca5-852b-2827a38f65dd",
+      "name": "LinkedIn: Publish Post",
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [
+        1584,
+        1856
+      ],
+      "credentials": {
+        "linkedInOAuth2Api": {
+          "id": "o6ZSuqa3n2Bi6rsw",
+          "name": "LinkedIn account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepares this week's LinkedIn post: the text the AI wrote, the blog link, and the featured image.\n// \"post: true\" goes on to the LinkedIn node. \"post: false\" (with the reason) skips it. The review email reports either.\n// The AI writes the post as plain text (see the prompt in \"Build LinkedIn Request\"), so nothing is reworded or checked here.\n\nconst MAX_CHARS = 3000; // LinkedIn's limit for a post\n\n// Finds another node's items even when n8n has added a number to its name (for example \"Collect Images1\").\nconst itemsOf = (base) => {\n  for (const name of [base, base + '1', base + '2', base + '3', base + '4', base + '5']) {\n    try { const all = $(name).all(); if (all.length) return all; } catch (e) { /* not this one */ }\n  }\n  return [];\n};\n\nlet text = '';\ntry {\n  const cfg = itemsOf('Config')[0]?.json;\n  const req = itemsOf('Build LinkedIn Request')[0]?.json;\n  if (!cfg || !req?.blogUrl) throw new Error('Could not read \"Config\" or \"Build LinkedIn Request\". Check both nodes ran before this one.');\n\n  // 1. The AI's reply: the post arrives as the arguments of a tool call\n  const res = $input.first().json ?? {};\n  const choice = res.choices?.[0];\n  const err = res.error ?? choice?.error;\n  if (err) throw new Error('The AI did not write the LinkedIn post: ' + String(err.description ?? err.message ?? JSON.stringify(err)).slice(0, 400));\n  if (choice?.finish_reason === 'length') throw new Error('The LinkedIn post was cut off before it finished. Raise max_tokens in \"Build LinkedIn Request\".');\n  let a;\n  try { a = JSON.parse(choice.message.tool_calls[0].function.arguments); }\n  catch (e) { throw new Error('The AI reply for the LinkedIn post could not be read.'); }\n  if (!a.post_text) throw new Error('The AI reply has no \"post_text\". Paste the matching code into \"Build LinkedIn Request\" as well.');\n\n  // 2. The link. The blog post is usually still hidden when this runs, and a link to a hidden post gives \"page not found\",\n  //    so link to the post only if it is live; otherwise to the blog's front page, where it appears once published.\n  let blogLive = false;\n  try {\n    const page = await this.helpers.httpRequest({ method: 'GET', url: req.blogUrl, returnFullResponse: true, ignoreHttpStatusErrors: true, timeout: 15000 });\n    blogLive = page.statusCode === 200;\n  } catch (e) { /* treat as not live */ }\n  const linkUrl = blogLive ? req.blogUrl : String(cfg.storeUrl).replace(/\\/+$/, '') + '/blogs/' + cfg.blogHandle;\n\n  // 3. The post: the AI's text, then the link, then the hashtags\n  text = String(a.post_text).trim() + '\\n' + linkUrl + '\\n\\n' + String(a.hashtags ?? '#coffee #kenyancoffee').trim();\n  if (text.length > MAX_CHARS) throw new Error('The post is ' + text.length + ' characters and LinkedIn allows ' + MAX_CHARS + '. Lower WORDS at the top of \"Build LinkedIn Request\".');\n\n  // 4. The image: this week's featured image (or the first one made), as a file the LinkedIn node can upload\n  const notes = [];\n  const out = { json: { post: true, text, mediaCategory: 'NONE', imageTitle: '', characters: text.length, blogLive, linkUrl, angle: String(a.angle ?? ''), notes } };\n  const images = itemsOf('Collect Images')[0]?.json?.images ?? [];\n  const im = images.find(x => x.slot === 'featured') ?? images[0];\n  const b64 = im ? itemsOf('AI: Generate Image')[im.index]?.json?.data?.[0]?.b64_json : null;\n  if (b64) {\n    out.binary = { data: await this.helpers.prepareBinaryData(Buffer.from(b64, 'base64'), im.filename, im.mime) };\n    out.json.mediaCategory = 'IMAGE';\n    out.json.imageTitle = String(im.alt ?? '').slice(0, 120);\n  } else {\n    notes.push('No image was available this week, so the post went out as text only');\n  }\n  return [out];\n\n} catch (e) {\n  // Nothing usable to post. The run carries on so the review email is still sent and can say why.\n  return [{ json: { post: false, reason: String(e.message ?? e).replace(/ \\[line \\d+\\]$/, ''), text, notes: [] } }];\n}"
+      },
+      "id": "e529a1a1-e805-44a9-891f-e95b74ff18e8",
+      "name": "Build LinkedIn Post",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1056,
+        1856
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a361dc65-0ee5-4dce-a4c4-bd8571f2e490",
+              "leftValue": "={{ $json.post }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "21863219-6d6b-4342-a08e-255637f93d99",
+      "name": "Post to LinkedIn?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1344,
+        1856
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Every Thursday 9am": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run manually (test)": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Check Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Config": {
+      "main": [
+        [
+          {
+            "node": "Sheets: Read Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: Read Queue": {
+      "main": [
+        [
+          {
+            "node": "Pick Next Topic",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick Next Topic": {
+      "main": [
+        [
+          {
+            "node": "Topic Found?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Topic Found?": {
+      "main": [
+        [
+          {
+            "node": "Shopify: Blog & Existing Posts",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build Queue-Empty Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Queue-Empty Email": {
+      "main": [
+        [
+          {
+            "node": "Email: Queue Empty",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shopify: Blog & Existing Posts": {
+      "main": [
+        [
+          {
+            "node": "Check Shopify Setup",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Any Images?": {
+      "main": [
+        [
+          {
+            "node": "Shopify: Get Upload Addresses",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Assemble Draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shopify: Get Upload Addresses": {
+      "main": [
+        [
+          {
+            "node": "Prepare Uploads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Uploads": {
+      "main": [
+        [
+          {
+            "node": "Shopify: Upload Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shopify: Upload Image": {
+      "main": [
+        [
+          {
+            "node": "Build File Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build File Records": {
+      "main": [
+        [
+          {
+            "node": "Any Uploaded?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Any Uploaded?": {
+      "main": [
+        [
+          {
+            "node": "Shopify: Register Files",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Assemble Draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shopify: Register Files": {
+      "main": [
+        [
+          {
+            "node": "Check Registered Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Registered Files": {
+      "main": [
+        [
+          {
+            "node": "Wait for Shopify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Shopify": {
+      "main": [
+        [
+          {
+            "node": "Shopify: Image Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shopify: Image Status": {
+      "main": [
+        [
+          {
+            "node": "Images Ready?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Images Ready?": {
+      "main": [
+        [
+          {
+            "node": "Assemble Draft",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait for Shopify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Assemble Draft": {
+      "main": [
+        [
+          {
+            "node": "Shopify: Create Draft Post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shopify: Create Draft Post": {
+      "main": [
+        [
+          {
+            "node": "Draft Created?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Draft Created?": {
+      "main": [
+        [
+          {
+            "node": "Build Follow-ups",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop: Shopify Rejected Post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Follow-ups": {
+      "main": [
+        [
+          {
+            "node": "Shopify: Set SEO Title & Description",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shopify: Set SEO Title & Description": {
+      "main": [
+        [
+          {
+            "node": "Sheets: Mark Row Drafted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: Mark Row Drafted": {
+      "main": [
+        [
+          {
+            "node": "Build LinkedIn Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Review Email": {
+      "main": [
+        [
+          {
+            "node": "Email: Draft Ready",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Shopify Setup": {
+      "main": [
+        [
+          {
+            "node": "Build Research Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Research Request1": {
+      "main": [
+        [
+          {
+            "node": "AI: Research the Topic1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI: Generate Image": {
+      "main": [
+        [
+          {
+            "node": "Collect Images1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI: Research the Topic1": {
+      "main": [
+        [
+          {
+            "node": "Build Writing Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Writing Request2": {
+      "main": [
+        [
+          {
+            "node": "AI: Write Article1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI: Write Article1": {
+      "main": [
+        [
+          {
+            "node": "Parse Article1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Article1": {
+      "main": [
+        [
+          {
+            "node": "Build Image Prompts1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Image Prompts1": {
+      "main": [
+        [
+          {
+            "node": "AI: Generate Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect Images1": {
+      "main": [
+        [
+          {
+            "node": "Any Images?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build LinkedIn Request": {
+      "main": [
+        [
+          {
+            "node": "AI: Write LinkedIn Article",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI: Write LinkedIn Article": {
+      "main": [
+        [
+          {
+            "node": "Build LinkedIn Post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email: Draft Ready": {
+      "main": [
+        []
+      ]
+    },
+    "LinkedIn: Publish Post": {
+      "main": [
+        [
+          {
+            "node": "Build Review Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build LinkedIn Post": {
+      "main": [
+        [
+          {
+            "node": "Post to LinkedIn?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post to LinkedIn?": {
+      "main": [
+        [
+          {
+            "node": "LinkedIn: Publish Post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "93e11571-fe2c-461e-a1bd-2c65d47f2e98",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7b3257d582e82ccd5e5cf9a29cad54b1fcd108eb892a88cb4f6512b48ac44c8c"
+  },
+  "nodeGroups": [],
+  "id": "2ol1G1KtHgDylDw8",
+  "tags": []
+}
